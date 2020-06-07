@@ -42,7 +42,7 @@ def splitDigits(num):
         x = num // divisor
         res.append(x)
         num %= divisor
-        divisor /= 10
+        divisor //= 10
     return res
 
 numeros = (555, 777, 46235, 32135, 2123513215321, 321532) #Un conjunto aleatorio
