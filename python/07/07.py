@@ -5,7 +5,7 @@
 |Tarea 1|
 ---------
 
-Entrega martes 09/06/2020 antes de la hora de la clase (11:00)
+Entrega martes 09/06/2020 antes de la hora de la clase (11:00 hrs GMT-6)
 
 ***************************************************
 
