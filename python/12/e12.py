@@ -10,6 +10,7 @@ class estudiante(object): #Clase estudiante
         self.nombre = nombre #para ser accedidos desde todos los metodos de la clase
         self.cursos = cursos
 
+    #Getters & setters
     def getCarnet(self): #Devuelve el carnet del estudiante
         return self.carnet
 
@@ -31,6 +32,9 @@ class estudiante(object): #Clase estudiante
     def __str__(self):  #Print class
         return str('Yo soy ' + self.getNombre())
 
+    def __repr__(self): 
+        return self.__str__()
+
 
 
 class curso(object): #Clase curso
@@ -51,6 +55,14 @@ class curso(object): #Clase curso
     def setNota(self, val):
         self.nota = val
 
+    def __str__(self):
+        return (str(self.getCodigo()) +
+         " | " + self.getNombre() +
+         " | " + str(self.getNota())
+        )
+
+    def __repr__(self):
+        return self.__str__()
 
 
 #Creacion de instancias
@@ -68,3 +80,4 @@ F1 = curso('0150','Fisica 1',84)
 
 Rodrigo.addCurso(FB) #Agregar Fisica Basica a Rodrigo
 Juan.addCurso(F1) #Agregar Fisica 1 a Juan
+Carlos.addCurso(curso('0969', 'Redes', 60))
