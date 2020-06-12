@@ -5,6 +5,8 @@ Continuacion OOP: sobrecarga de operadores
 '''
 Tarea 2:
 
+Descripción detallada acá: https://bit.ly/3cUBEBm
+
 Utilizando el mismo repositorio de tareas, ahora cree
 una carpeta llamada T02, para agregar todo el código ahí.
 
