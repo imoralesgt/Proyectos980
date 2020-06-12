@@ -9,8 +9,8 @@ Utilizando el mismo repositorio de tareas, ahora cree
 una carpeta llamada T02, para agregar todo el código ahí.
 
 Debe realizar una clase capaz de representar a una matriz 
-de 1, 2 o 3 dimensiones. Deberá analizar las características
-del parámetro del constructor (vector, o matriz de 2 o 3 dimensiones) y
+de 1 o 2 dimensiones. Deberá analizar las características
+del parámetro del constructor (vector, o matriz de 2 dimensiones) y
 en función de eso, aplicar la sobrecarga de operadores para las
 operaciones básicas de matrices:
     - Producto con un escalar
@@ -23,9 +23,9 @@ operaciones básicas de matrices:
 Asimismo, deberá crear (en el mismo archio de código fuente) las clases
 necesarias para representar las excepciones relacionadas con operaciones inválidas.
 Por ejemplo (pero no limitado a):
-    - Al hacer el producto, si las dimensiones son incorrectas
+    - Al hacer el producto, si las dimensiones y tamaño son incorrectas
     - Al calular el determinante, si la matriz no es cuadrada
-    - Al sumar/restar dos matrices, si las dimensiones son incorrectas
+    - Al sumar/restar dos matrices, si las dimensiones y tamaño son incorrectas
 
 NO es necesario crear excepciones de errores que ya existen: por ejemplo, si algún
 dato es de tipo no numérico y se trata de hacer alguna operación aritmética. Este tipo
