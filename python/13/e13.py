@@ -43,7 +43,7 @@ class vect(object):
     #Todos los metodos (funciones) dentro de un 
     #objeto, llevan como parametro inicial "self"
     def __init__(self, data = []):
-        self.data = data
+        self.data = list(data)
 
     #La "longitud" del objeto, es en realidad representado
     #por la cantidad de datos de su lista principal
@@ -51,8 +51,8 @@ class vect(object):
         return len(self.data)
 
     def equalLenghts(self, nextObject):
-        #Esto es posible, gracias a que se sobrecargó el 
-        #operador __len__, de lo contrario, el código debería
+        #Esto es posible, gracias a que se sobrecargó la
+        #función __len__, de lo contrario, el código debería
         #haber sido así:
         #return len(self.data) == len(nextObject.data)
         return len(self) == len(nextObject) 
@@ -64,20 +64,20 @@ class vect(object):
             x = []
             for i in range(len(self.data)):
                 x.append(self.data[i] + sumando.data[i])
-            return x
+            return vect(x)
         else:
             raise ErrorDimensional(len(self.data), len(sumando.data))
 
     #Sobrecarga de resta, aplicado para un vector
-    def __sub__(self, substraendo):
-        if self.equalLenghts(substraendo):
+    def __sub__(self, sustraendo):
+        if self.equalLenghts(sustraendo):
             x = []
             for i in range(len(self.data)):
-                x.append(self.data[i] - substraendo.data[i])
-            return x        
+                x.append(self.data[i] - sustraendo.data[i])
+            return vect(x)        
         else:
             #Levantamos una excepcion creada a la medida
-            raise ErrorDimensional
+            raise ErrorDimensional(len(self.data), len(sustraendo.data))
 
     #Sobrecarga de multiplicacion, solo valida para producto con escalar
     #Debe hacerse en el siguiente orden: vector*escalar
@@ -87,7 +87,7 @@ class vect(object):
             x = []
             for i in self.data:
                 x.append(i*escalar)
-            return x
+            return vect(x)
         else:
             #La excepcion ya existe, solo se va a reutilizar
             raise TypeError("Solo pueden realizarse producto con un escalar")
@@ -108,7 +108,7 @@ class vect(object):
             x = []
             for i in self.data:
                 x.append(-i)
-            return x
+            return vect(x)
         else:
             raise VectorVacio
 
@@ -146,3 +146,11 @@ a = vect([1,2,3,4,5])
 b = vect([6,2,0,-3,8])
 c = vect([3,8])
 d = vect()
+
+
+
+#Manejo de vector vacio
+try:
+    -d
+except VectorVacio:
+    vect()
