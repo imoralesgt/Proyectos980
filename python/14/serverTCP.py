@@ -25,7 +25,7 @@ while True:
     print('Esperando conexion remota')
     connection, clientAddress = sock.accept()
     try:
-        print('connection from', clientAddress)
+        print('Conexion establecida desde', clientAddress)
 
         # Se envia informacion en bloques de BUFFER_SIZE bytes
         # y se espera respuesta de vuelta
