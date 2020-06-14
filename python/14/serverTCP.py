@@ -14,6 +14,9 @@ serverAddress = (IP_ADDR_ALL, IP_PORT) #Escucha en todas las interfaces
 print('Iniciando servidor en {}, puerto {}'.format(*serverAddress))
 sock.bind(serverAddress) #Levanta servidor con parametros especificados
 
+#Existe una nueva funcion en Python 3.8: socket.create_server()
+#Tiene poca documentación aún, por lo que utilizaremos socket.bind() + socket.listen()
+
 # Habilita la escucha del servidor en las interfaces configuradas
 sock.listen(1) #El argumento indica el nivel de log a utilizar
 
