@@ -16,3 +16,4 @@ archivo.close()
 
 for i in datos:
     print(i)
+    
