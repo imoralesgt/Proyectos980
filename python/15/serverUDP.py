@@ -23,14 +23,12 @@ try:
         print('\nEsperando cualquier mensaje, de cualquier cliente...')
         data, address = sock.recvfrom(BUFFER_SIZE)
 
-        print('\nRecibidos {} bytes desde {}'.format(
-            len(data), address))
+        print('\nRecibidos {} bytes desde {}'.format(len(data), address))
         print(data)
 
         if data:
             sent = sock.sendto(data, address)
-            print('Enviados de vuelta {} bytes a {}'.format(
-                sent, address))
+            print('Enviados de vuelta {} bytes a {}'.format(sent, address))
 
 finally:
     print("Cerrando servidor...")
