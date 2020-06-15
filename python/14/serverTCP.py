@@ -18,7 +18,7 @@ sock.bind(serverAddress) #Levanta servidor con parametros especificados
 #Tiene poca documentación aún, por lo que utilizaremos socket.bind() + socket.listen()
 
 # Habilita la escucha del servidor en las interfaces configuradas
-sock.listen(1) #El argumento indica el nivel de log a utilizar
+sock.listen(10) #El argumento indica la cantidad de conexiones en cola
 
 while True:
     # Esperando conexion
