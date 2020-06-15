@@ -2,7 +2,7 @@ import socket
 
 IP_ADDRESS = '157.245.82.242'
 IP_ADDRESS_ALL = ''
-IP_PORT = 980
+IP_PORT = 9800
 
 #Si el buffer es menor al mensaje a enviar, la info llega incompleta
 BUFFER_SIZE = 4096 #Debe ser menor al tamaño máximo del datagrama de IPv4 (64 KB)

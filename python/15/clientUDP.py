@@ -1,7 +1,7 @@
 import socket
 
 SERVER_ADDRESS = '157.245.82.242'
-SERVER_PORT = 980
+SERVER_PORT = 9800
 
 #BUFFER_SIZE = 16 #Si BUFFER_SIZE es menor al mensaje, este se corta
 BUFFER_SIZE = 4096 #Usamos buffer de 4KB
