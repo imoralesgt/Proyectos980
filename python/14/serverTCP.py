@@ -7,7 +7,7 @@ IP_ADDR = '157.245.82.242' #La IP donde desea levantarse el server
 IP_ADDR_ALL = '' #En caso que se quiera escuchar en todas las interfaces de red
 IP_PORT = 9800 #Puerto al que deben conectarse los clientes
 
-BUFFER_SIZE = 16 #Bloques de 16 bytes
+BUFFER_SIZE = 16 * 1024 #Bloques de 16 KB
 
 # Bind the socket to the port
 serverAddress = (IP_ADDR_ALL, IP_PORT) #Escucha en todas las interfaces
@@ -38,6 +38,9 @@ while True:
             else:
                 print('Transmision finalizada desde el cliente ', clientAddress)
                 break
+    
+    except KeyboardInterrupt:
+        sock.close()
 
     finally:
         # Se baja el servidor para dejar libre el puerto para otras aplicaciones o instancias de la aplicacion

@@ -2,7 +2,7 @@ import socket
 
 SERVER_IP   = '157.245.82.242'
 SERVER_PORT = 9800
-BUFFER_SIZE = 16
+BUFFER_SIZE = 16 * 1024
 
 # Se crea socket TCP
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
