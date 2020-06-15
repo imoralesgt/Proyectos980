@@ -3,7 +3,7 @@
 import socket
 
 SERVER_ADDR = ''
-SERVER_PORT = 980
+SERVER_PORT = 9800
 
 
 BUFFER_SIZE = 8 * 1024 #8 KB para buffer de transferencia de archivos
