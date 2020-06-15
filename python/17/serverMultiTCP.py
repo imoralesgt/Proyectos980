@@ -60,7 +60,7 @@ Acá se configuran los eventos a disparar las funciones wrapper
 
 
 SERVER_ADDR = ''
-SERVER_PORT = 980
+SERVER_PORT = 9800
 
 BUFFER_SIZE = 1024
 
