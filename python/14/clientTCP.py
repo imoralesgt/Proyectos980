@@ -1,7 +1,7 @@
 import socket
 
 SERVER_IP   = '157.245.82.242'
-SERVER_PORT = 980
+SERVER_PORT = 9800
 BUFFER_SIZE = 16
 
 # Se crea socket TCP

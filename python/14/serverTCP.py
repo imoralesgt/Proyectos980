@@ -5,7 +5,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 IP_ADDR = '157.245.82.242' #La IP donde desea levantarse el server
 IP_ADDR_ALL = '' #En caso que se quiera escuchar en todas las interfaces de red
-IP_PORT = 980 #Puerto al que deben conectarse los clientes
+IP_PORT = 9800 #Puerto al que deben conectarse los clientes
 
 BUFFER_SIZE = 16 #Bloques de 16 bytes
 
