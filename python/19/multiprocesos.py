@@ -25,7 +25,6 @@ logging.basicConfig(
     format = '[%(levelname)s] (%(processName)-10s) %(message)s'
     )
 
-
 #Lanza el primer proceso con los parámetros:
 #name: Nombre "humano" para identificar fácil al proceso
 #target: La función a ejecutar (o método de un objeto)
