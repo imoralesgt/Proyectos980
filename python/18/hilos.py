@@ -87,12 +87,14 @@ except KeyboardInterrupt:
     if t2.isAlive():
         t1._stop()
 
+
+    # if p1.is_alive():
+    #     p1.terminate()
+    
+    # if p2.is_alive():
+    #     p2.terminate()
+
 finally:
     sys.exit()
         
 
-        # if p1.is_alive():
-        #     p1.terminate()
-        
-        # if p2.is_alive():
-        #     p2.terminate()
