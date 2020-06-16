@@ -1,3 +1,5 @@
+#https://www.geeksforgeeks.org/arecord-command-in-linux-with-examples/
+
 import os 
 import logging
 
