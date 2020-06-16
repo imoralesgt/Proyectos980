@@ -5,7 +5,7 @@ equivalente, pero con procesamiento multinúcleo.
 '''
 
 
-import threading #Concurrencia
+import threading #Concurrencia con hilos
 import time      #Retardos
 import logging   #Logging
 import sys       #Requerido para salir (sys.exit())
@@ -44,15 +44,30 @@ logging.basicConfig(
 #daemon: servicio corriendo de fondo -> permite detener el hilo con "Thread._stop()"
 t1 = threading.Thread(name = 'Contador de 1 segundo',
                         target = contador,
-                        args = (range(10), ),
+                        args = (range(100), ),
                         daemon = True
                         )
 
 t2 = threading.Thread(name = 'Contador rapido',
                         target = contador,
-                        args = ((range(25), 0.2)),
+                        args = ((range(250), 0.2)),
                         daemon = True
                         )
+
+listaHilos = []
+
+for i in range(20):
+    listaHilos.append(
+        threading.Thread(name = 'Contador ' + str(i),
+                        target = contador,
+                        args = (()),
+                        daemon = True
+                        )
+    )
+
+
+
+
 
 # p1 = multiprocessing.Process(name = 'Contador de 1 segundo',
 #                         target = contador,
@@ -69,14 +84,27 @@ t2 = threading.Thread(name = 'Contador rapido',
 t1.start()
 t2.start()
 
+for i in listaHilos:
+    i.start()
+
 # p1.start()
 # p2.start()
 
 #Programa principal
 
+cnt = 0
+
 try:
     while True:
-        pass #Acá pueden ejecutar el código de su "loop principal"
+       logInfo2 = 'Contador: ' + str(cnt)
+       logging.info(logInfo2) 
+
+
+       cnt += 1
+
+       time.sleep(5)
+
+
 except KeyboardInterrupt:
     
     logging.INFO("Terminando hilos")
