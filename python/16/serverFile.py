@@ -10,7 +10,7 @@ BUFFER_SIZE = 8 * 1024 #8 KB para buffer de transferencia de archivos
 
 server_socket = socket.socket()
 server_socket.bind((SERVER_ADDR, SERVER_PORT))
-server_socket.listen(10) #1 conexion activa y 9 en cola
+server_socket.listen(100) #1 conexion activa y 9 en cola
 try:
     while True:
         print("\nEsperando conexion remota...\n")
