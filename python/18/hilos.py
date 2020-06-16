@@ -1,7 +1,5 @@
 '''
 Ejemplo de programación concurrente con hilos
-Hay algunas funciones comentadas, que son el 
-equivalente, pero con procesamiento multinúcleo.
 '''
 
 
@@ -10,8 +8,6 @@ import time      #Retardos
 import logging   #Logging
 import sys       #Requerido para salir (sys.exit())
 
-#Para fines demostrativos
-import multiprocessing #Procesamiento multinucleo
 
 #Esta función será lanzada en múltiples hilos, con distintos parámetros
 def contador(rango = range(100), delay = 1):
@@ -30,11 +26,6 @@ logging.basicConfig(
     level = logging.DEBUG, 
     format = '[%(levelname)s] (%(threadName)-10s) %(message)s'
     )
-
-# logging.basicConfig(
-#     level = logging.DEBUG, 
-#     format = '[%(levelname)s] (%(processName)-10s) %(message)s'
-#     )
 
 
 #Lanza el primer hilo con los parámetros:
@@ -65,19 +56,7 @@ for i in range(20):
                         )
     )
 
-
-
-
-
-# p1 = multiprocessing.Process(name = 'Contador de 1 segundo',
-#                         target = contador,
-#                         args = (range(25), )
-#                         )
-
-# p2 = multiprocessing.Process(name = 'Contador rapido',
-#                         target = contador,
-#                         args = ((range(200), 0.2))
-#                         )
+                     )
 
 #Luego de configurar cada hilo, se inicializan
 
@@ -87,8 +66,6 @@ t2.start()
 for i in listaHilos:
     i.start()
 
-# p1.start()
-# p2.start()
 
 #Programa principal
 
@@ -114,13 +91,6 @@ except KeyboardInterrupt:
     
     if t2.isAlive():
         t1._stop()
-
-
-    # if p1.is_alive():
-    #     p1.terminate()
-    
-    # if p2.is_alive():
-    #     p2.terminate()
 
 finally:
     sys.exit()
