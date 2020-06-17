@@ -3,6 +3,8 @@ import logging
 import time
 import random
 
+from brokerData import * #Informacion de la conexion
+
 '''
 Ejemplo de cliente MQTT: gateway de red de sensores
 '''
@@ -12,17 +14,6 @@ logging.basicConfig(
     level = logging.INFO, 
     format = '[%(levelname)s] (%(processName)-10s) %(message)s'
     )
-
-#Parametros de conexion
-MQTT_HOST = "157.245.82.242"
-MQTT_PORT = 1883
-
-#Credenciales
-#Se acostumbra solicitar al usuario que ingrese su user/pass
-#no es buena practica dejar escritas en el codigo las credenciales
-MQTT_USER = "proyectos"
-MQTT_PASS = "proyectos980"
-
 
 #Nombres de Topics de ejemplo
 SENSORES    = 'sensores'
@@ -102,16 +93,16 @@ try:
 
         #Para temperatura
         for i in range(sensores.getSensorCount()):
-            publishData(SENSORES, (TEMPERATURA + "/" + str(i)), sensores.getTemperatura(i))
+            publishData(SENSORES, (str(i) + "/" + TEMPERATURA), sensores.getTemperatura(i))
             
         
         #Para humedad
         for i in range(sensores.getSensorCount()):
-            publishData(SENSORES, (HUMEDAD + "/" + str(i)), sensores.getHumedad(i))
+            publishData(SENSORES, (str(i) + "/" + HUMEDAD), sensores.getHumedad(i))
 
         #Para presion
         for i in range(sensores.getSensorCount()):
-            publishData(SENSORES, (PRESION_A + "/" + str(i)), sensores.getPresionA(i))
+            publishData(SENSORES, (str(i) + "/" + PRESION_A), sensores.getPresionA(i))
 
 
         logging.info("Los datos han sido enviados al broker")            
