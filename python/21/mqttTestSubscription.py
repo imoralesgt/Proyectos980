@@ -48,6 +48,7 @@ client.subscribe([("sensores/8/#", qos), ("sensores/+/atm", qos), ("sensores/0/t
 
 #Iniciamos el thread (implementado en paho-mqtt) para estar atentos a mensajes en los topics subscritos
 client.loop_start()
+#client.loop_forever()
 
 #El thread de MQTT queda en el fondo, mientras en el main loop hacemos otra cosa
 
