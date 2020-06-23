@@ -13,8 +13,8 @@ try:
     buff = sock.recv(BUFFER_SIZE)
     archivo = open('recibido', 'wb') #Aca se guarda el archivo entrante
     while buff:
-        buff = sock.recv(BUFFER_SIZE) #Los bloques se van agregando al archivo
         archivo.write(buff)
+        buff = sock.recv(BUFFER_SIZE) #Los bloques se van agregando al archivo
 
     archivo.close() #Se cierra el archivo
 
